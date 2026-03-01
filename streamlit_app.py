@@ -170,7 +170,7 @@ html_content = """
 
   const roadWidth = road.offsetWidth;
   const carWidth = car.offsetWidth;
-  const endX = roadWidth - carWidth;
+  const endX = roadWidth;
 
   const roadLeft = road.getBoundingClientRect().left;
   const letterPositions = Array.from(spans).map(
@@ -195,7 +195,7 @@ html_content = """
       scrub: 1,
       onUpdate: function (self) {
         const currentX = self.progress * endX;
-        trail.style.width = (currentX + carWidth / 2) + "px";
+        trail.style.width = currentX + "px";
 
         spans.forEach(function (span, i) {
           const letterX = letterPositions[i] || 0;

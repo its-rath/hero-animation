@@ -42,7 +42,7 @@ export default function Home() {
 
     const roadWidth = roadRef.current?.offsetWidth || window.innerWidth;
     const carWidth = carRef.current.offsetWidth;
-    const endX = roadWidth - carWidth;
+    const endX = roadWidth;
 
     const roadLeft = roadRef.current?.getBoundingClientRect().left || 0;
     const letterPositions = lettersRef.current.map((l) =>
@@ -69,7 +69,7 @@ export default function Home() {
           const currentX = self.progress * endX;
 
           if (trailRef.current) {
-            gsap.set(trailRef.current, { width: currentX + carWidth / 2 });
+            gsap.set(trailRef.current, { width: currentX });
           }
 
           lettersRef.current.forEach((letter, i) => {
